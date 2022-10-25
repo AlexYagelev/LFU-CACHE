@@ -21,10 +21,13 @@ public:
 	int find_minimum();
 	int get_min();
 
+
 	bool find_and_add(const string &address);
 
 	void print();
 	void print_address(const string &address);
+
+	bool find(const string &address);
 };
 
 
