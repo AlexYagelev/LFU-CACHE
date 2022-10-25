@@ -88,3 +88,18 @@ void LFU::print_address(const string &address)
 	auto it = My_map.find(address);
 		cout <<  it->first << " : " << it->second << endl;
 }
+
+bool LFU::find(const string &address)
+{
+	auto result = My_map.find(address);
+
+	if (result != My_map.end())
+	{
+		My_map[address] += 1;
+		int value = My_map[address];
+		min = find_minimum();
+		return true;
+	}
+	else
+		return false;
+}
